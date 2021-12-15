@@ -54,9 +54,7 @@ a {
   color: #fff;
 }
 
-.header,
-.main,
-.footer {
+.header, .main {
   position: relative;
   display: block;
   width: 100%;
@@ -67,10 +65,17 @@ a {
 }
 
 .footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #fff;
   height: 10%;
-  bottom: -100px;
-  -webkit-animation: slide 1s forwards;
-  animation: slide 1s forwards;
+  left: -500px;
+  -webkit-animation: leftslide 1s forwards;
+  animation: leftslide 1s forwards;
 }
 
 @-webkit-keyframes slide {
@@ -82,6 +87,18 @@ a {
 @keyframes slide {
   100% {
     bottom: 0;
+  }
+}
+
+@-webkit-keyframes leftslide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes leftslide {
+  100% {
+    left: 0;
   }
 }
 
@@ -108,12 +125,12 @@ a {
   margin-bottom: 1em;
   padding: 0;
   list-style-type: none;
-}
 
-.links li {
-  position: relative;
-  margin: 0;
-  padding: 0.125em;
+  li {
+    position: relative;
+    margin: 0;
+    padding: 0.125em;
+  }
 }
 
 .header {
@@ -144,29 +161,17 @@ a {
   margin: 0;
   padding: 1em;
   z-index: 1000;
-  left: 200px;
-  -webkit-animation: leftslide 1s forwards;
-  animation: leftslide 1s forwards;
-}
+  bottom: -600px;
+  -webkit-animation: slide 1s forwards;
+  animation: slide 1s forwards;
 
-@-webkit-keyframes leftslide {
-  100% {
+  svg {
+    position: absolute;
+    top: 0;
     left: 0;
+    height: 35px;
+    width: 230px;
   }
-}
-
-@keyframes leftslide {
-  100% {
-    left: 0;
-  }
-}
-
-.logo svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 35px;
-  width: 230px;
 }
 
 .background {
@@ -210,42 +215,42 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
 
-.tel i {
-  padding-right: 1em;
-  font-size: 0.8125rem;
-  font-family: "Font Awesome 5 Free";
-  color: #fff;
-}
+  i {
+    padding-right: 1em;
+    font-size: 0.8125rem;
+    font-family: "Font Awesome 5 Free";
+    color: #fff;
+  }
 
-.tel a {
-  position: relative;
-  display: inline-block;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-}
+  a {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    transition: color 0.2s ease;
 
-.tel a:hover {
-  color: white;
-}
+    &:hover {
+      color: white;
+    }
 
-.tel a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: white;
-  transform: scaleX(0);
-  transform-origin: top left;
-  transition: transform 0.3s ease;
-}
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform 0.3s ease;
+    }
 
-.tel a:hover::before {
-  transform: scaleX(1);
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .iconround {
@@ -258,6 +263,21 @@ a {
   background-size: 100% 200%;
   background-position: top left;
   transition: all 0.3s ease-out;
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -267,35 +287,21 @@ a {
   }
 }
 
-.iconround i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 @media (min-width: 768px) {
-  .icon--rounded i {
+  .iconround i {
     font-size: 25px;
   }
 }
 
-.iconround a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
 .fab {
   padding: 20px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-}
 
-.fab:hover {
-  color: black;
+  &:hover {
+    color: black;
+  }
 }
 
 .iconround:hover {
