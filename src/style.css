@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  border-collapse: separate;
+  outline: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "TeleGrotesk Regular", Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+h1 {
+  font-family: "TeleGrotesk Ultra", Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 0.6;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 0.6;
+  }
+}
+
+p {
+  font-family: "TeleGrotesk Regular", Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 2rem;
+  }
+}
+
+a {
+  font-family: "TeleGrotesk Thin", Arial, sans-serif;
+  font-size: 1.2375rem;
+  line-height: 1;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header,
+.main,
+.footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.footer {
+  height: 10%;
+  bottom: -100px;
+  -webkit-animation: slide 1s forwards;
+  animation: slide 1s forwards;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    bottom: 0;
+  }
+}
+
+.main {
+  height: 80%;
+  z-index: 500;
+}
+
+.container {
+  position: absolute;
+  bottom: 400px;
+  width: 100%;
+  margin-bottom: 30;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: -0.25em;
+  margin-bottom: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+.links li {
+  position: relative;
+  margin: 0;
+  padding: 0.125em;
+}
+
+.header {
+  height: 10%;
+}
+
+@media (min-width: 768px) {
+  .header {
+    text-align: right;
+  }
+}
+
+.box {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 1em;
+}
+
+.logo {
+  position: relative;
+  height: 35px;
+  width: 230px;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 1em;
+  z-index: 1000;
+  left: 200px;
+  -webkit-animation: leftslide 1s forwards;
+  animation: leftslide 1s forwards;
+}
+
+@-webkit-keyframes leftslide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes leftslide {
+  100% {
+    left: 0;
+  }
+}
+
+.logo svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 230px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background--image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 200;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: top;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.tel {
+  padding: 0.5em;
+  position: relative;
+  top: 1px;
+  padding-right: 1em;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tel i {
+  padding-right: 1em;
+  font-size: 0.8125rem;
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
+}
+
+.tel a {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.tel a:hover {
+  color: white;
+}
+
+.tel a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.tel a:hover::before {
+  transform: scaleX(1);
+}
+
+.iconround {
+  position: relative;
+  height: 41.66667px;
+  width: 41.66667px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: linear-gradient(to top, #fff 50%, #000 50%);
+  background-size: 100% 200%;
+  background-position: top left;
+  transition: all 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .iconround {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.iconround i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .icon--rounded i {
+    font-size: 25px;
+  }
+}
+
+.iconround a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.fab {
+  padding: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fab:hover {
+  color: black;
+}
+
+.iconround:hover {
+  background-position: bottom left;
+  color: #000;
+}
+
+.change {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  width: 100vw;
+  height: 100vh;
+  mix-blend-mode: multiply;
+}
+
+.verse {
+  margin-bottom: 0.5em;
+}
+
+.description {
+  padding: 0;
+  margin-top: 0;
+}
