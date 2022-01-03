@@ -1,3 +1,7 @@
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
 * {
   box-sizing: border-box;
   border-collapse: separate;
@@ -54,7 +58,8 @@ a {
   color: #fff;
 }
 
-.header, .main {
+.header,
+.main {
   position: relative;
   display: block;
   width: 100%;
@@ -216,14 +221,20 @@ a {
   flex-wrap: wrap;
   justify-content: center;
 
-  i {
+  .tel_icon {
+    @extend %fa-icon;
+    @extend .fas;
+    &:before { 
+      content: fa-content($fa-var-phone-alt);
+      color: #fff;
+    }
     padding-right: 1em;
     font-size: 0.8125rem;
     font-family: "Font Awesome 5 Free";
     color: #fff;
   }
 
-  a {
+  .tel_link {
     position: relative;
     display: inline-block;
     font-size: 1rem;
@@ -246,17 +257,15 @@ a {
       transform-origin: top left;
       transition: transform 0.3s ease;
     }
-
     &:hover::before {
       transform: scaleX(1);
     }
   }
 }
-
 .iconround {
   position: relative;
-  height: 41.66667px;
-  width: 41.66667px;
+  height: 40px;
+  width: 40px;
   border: 2px solid #fff;
   border-radius: 50%;
   background: linear-gradient(to top, #fff 50%, #000 50%);
@@ -264,14 +273,43 @@ a {
   background-position: top left;
   transition: all 0.3s ease-out;
 
-  i {
+  .instagram {
+    @extend %fa-icon;
+    @extend .fab;
+    &:before { 
+      content: fa-content($fa-var-instagram);
+    }
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  a {
+  .twitter {
+    @extend %fa-icon;
+    @extend .fab;
+    &:before { 
+      content: fa-content($fa-var-twitter);
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .facebook {
+    @extend %fa-icon;
+    @extend .fab;
+    &:before { 
+      content: fa-content($fa-var-facebook);
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icon_link {
     position: absolute;
     top: 0px;
     left: 0px;
